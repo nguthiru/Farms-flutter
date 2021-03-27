@@ -2,6 +2,7 @@ import 'package:farms/colorConstants.dart';
 import 'package:farms/controller/accounts.dart';
 import 'package:farms/views/Registration/line.dart';
 import 'package:farms/views/login.dart';
+import 'package:farms/views/logo.dart';
 import 'package:farms/views/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,16 +51,8 @@ class SignUpScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 18.0, vertical: 6.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text("Farms",
-                                style: TextStyle(
-                                    fontSize: 38, fontWeight: FontWeight.bold)),
-                            SvgPicture.asset("Assets/Icons/leaf.svg",
-                                color: Colors.green, width: 18, height: 18),
-                          ],
+                        child: Logo(
+                          size: 38,
                         ),
                       ),
                       Center(

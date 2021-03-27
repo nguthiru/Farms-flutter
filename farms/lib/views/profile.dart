@@ -1,6 +1,6 @@
 import 'package:farms/colorConstants.dart';
 import 'package:farms/controller/farmController.dart';
-import 'package:farms/network/constants.dart';
+import 'package:farms/network/urls.dart';
 import 'package:farms/views/Registration/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

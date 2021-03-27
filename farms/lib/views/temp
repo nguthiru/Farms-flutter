@@ -1,0 +1,35 @@
+child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       Container(
+          //         child: Column(
+          //           crossAxisAlignment: CrossAxisAlignment.start,
+          //           children: [
+          //             ColumnHeading(
+          //               head: "My produce",
+          //             ),
+          //             ListView.builder(
+          //               itemCount: controller.produces.length,
+          //               scrollDirection: Axis.horizontal,
+          //               itemBuilder: (context, index) {
+          //                 return ProduceCard(
+          //                     produce: controller.produces[index]);
+          //               },
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //       ColumnHeading(head: "Recents Bids"),
+          //       Container(
+          //         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5.0),
+          //         child: ListView.builder(
+          //           scrollDirection: Axis.vertical,
+          //           itemCount: controller.bids.length,
+          //           itemBuilder: (context, index) {
+          //             return BidCard(bid: controller.bids[index]);
+          //           },
+          //         ),
+          //       )
+          //     ],
+          //   ),
+          // )

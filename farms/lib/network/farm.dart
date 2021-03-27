@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:farms/constants.dart';
-import 'package:farms/network/constants.dart';
+import 'package:farms/network/urls.dart';
 import 'package:http/http.dart' as http;
 
 Future<String> fetchToken() async {
@@ -31,7 +31,7 @@ Future<http.Response> farmPatch(
 Future<http.Response> fetch(endpoint) async {
   String token = await fetchToken();
   http.Response response =
-      await http.get(endpoint, headers: {'Authorization': token});
+      await http.get(Uri.parse(endpoint), headers: {'Authorization': token});
 
   return response;
 }
