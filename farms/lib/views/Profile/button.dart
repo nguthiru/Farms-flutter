@@ -1,11 +1,11 @@
 import 'package:farms/colorConstants.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class ConfirmButton extends StatelessWidget {
   final String hintText;
   final Function press;
 
-  const CustomButton({Key key, this.hintText, this.press}) : super(key: key);
+  const ConfirmButton({Key key, this.hintText, this.press}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -25,8 +25,9 @@ dependencies:
     sdk: flutter
   get : any
   http: any
-  shared_preferences: ^2.0.5
+  shared_preferences: any
   flutter_svg : any
+  image_picker: any
   
 
 

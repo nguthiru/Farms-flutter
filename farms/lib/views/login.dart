@@ -1,5 +1,7 @@
+import 'package:farms/colorConstants.dart';
 import 'package:farms/controller/accounts.dart';
 import 'package:farms/views/Registration/line.dart';
+import 'package:farms/views/profile.dart';
 import 'package:farms/views/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 38, fontWeight: FontWeight.bold)),
                     SvgPicture.asset("Assets/Icons/leaf.svg",
-                        color: Colors.green, width: 18, height: 18),
+                        color: primaryGreen, width: 18, height: 18),
                   ],
                 ),
               ),
@@ -78,7 +80,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 6),
               Center(
                   child: CustomButton(
-                press: controller.login,
+                press: () => controller.login(Profile()),
                 hintText: "LOGIN",
               )),
               Padding(

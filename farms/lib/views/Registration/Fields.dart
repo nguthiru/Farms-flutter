@@ -1,11 +1,14 @@
+import 'package:farms/colorConstants.dart';
 import 'package:flutter/material.dart';
 
 class InputContainer extends StatelessWidget {
+  final String supportingText;
   final String hintText;
   final IconData icon;
   final TextEditingController controller;
 
-  const InputContainer({Key key, this.hintText, this.icon, this.controller})
+  const InputContainer(
+      {Key key, this.hintText, this.icon, this.controller, this.supportingText})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -23,12 +26,15 @@ class InputContainer extends StatelessWidget {
         child: TextField(
           controller: controller,
           decoration: InputDecoration(
-              hintText: hintText,
-              hintStyle: TextStyle(color: Colors.orange[400]),
+              hintText: supportingText == null ? hintText : supportingText,
+              hintStyle: TextStyle(
+                  color: supportingText == null
+                      ? accentOrange
+                      : accentOrange.withOpacity(0.1)),
               border: InputBorder.none,
               icon: Icon(
                 icon,
-                color: Colors.green[300],
+                color: primaryGreen,
               )),
         ),
       ),

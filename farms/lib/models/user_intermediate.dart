@@ -1,35 +1,11 @@
 import 'dart:convert';
 
-User userFromJson(String str) => User.fromJson(json.decode(str));
+UserFarm userFarmFromJson(String str) => UserFarm.fromJson(json.decode(str));
 
-String userToJson(User data) => json.encode(data.toJson());
+String userToJson(UserFarm data) => json.encode(data.toJson());
 
-class User {
-  User({
-    this.expiry,
-    this.token,
-    this.user,
-  });
-
-  DateTime expiry;
-  String token;
-  UserClass user;
-
-  factory User.fromJson(Map<String, dynamic> json) => User(
-        expiry: DateTime.parse(json["expiry"]),
-        token: json["token"],
-        user: UserClass.fromJson(json["user"]),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "expiry": expiry.toIso8601String(),
-        "token": token,
-        "user": user.toJson(),
-      };
-}
-
-class UserClass {
-  UserClass({
+class UserFarm {
+  UserFarm({
     this.username,
     this.id,
     this.email,
@@ -43,7 +19,7 @@ class UserClass {
   String usertype;
   Farm farm;
 
-  factory UserClass.fromJson(Map<String, dynamic> json) => UserClass(
+  factory UserFarm.fromJson(Map<String, dynamic> json) => UserFarm(
         username: json["username"],
         id: json["id"],
         email: json["email"],

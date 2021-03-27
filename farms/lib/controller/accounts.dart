@@ -8,7 +8,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AccountController extends GetxController {
   RxList user = List(1).obs;
   RxString errors = ''.obs;
+  RxInt status = 0.obs;
   SharedPreferences prefs;
+  RxBool loading = false.obs;
 
   TextEditingController username = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -41,23 +43,25 @@ class AccountController extends GetxController {
     prefs.setString('token', token);
   }
 
-  void validation(http.Response response) {
-    print(response.body);
+  bool validation(http.Response response) {
     if (response.statusCode == 200) {
       User usr = userFromJson(response.body);
       user.add(usr);
 
       //add Token to database
       updateToken(usr.token);
+      return true;
     } else {
       if (response.statusCode == 400) {
         errors.value = "User already exists";
+        return false;
       }
     }
   }
 
   void register() async {
     if (password1.text == password2.text) {
+      loading.value = true;
       http.Response response = await registerApi(
         username: username.text,
         email: email.text,
@@ -65,17 +69,24 @@ class AccountController extends GetxController {
         password2: password2.text,
         phone: phone.text,
       );
+      status.value = response.statusCode;
       validation(response);
+      loading.value = false;
     } else {
       errors.value = "Passwords dont Match";
     }
   }
 
-  void login() async {
+  void login(Widget nextPage) async {
+    loading.value = true;
     http.Response response = await loginApi(
       email: email.text,
       password: password1.text,
     );
-    validation(response);
+    status.value = response.statusCode;
+    if (validation(response)) {
+      Get.to(() => nextPage);
+    }
+    loading.value = false;
   }
 }
