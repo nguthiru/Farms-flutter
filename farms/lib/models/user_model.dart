@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'user_intermediate.dart';
+
 User userFromJson(String str) => User.fromJson(json.decode(str));
 
 String userToJson(User data) => json.encode(data.toJson());
@@ -57,41 +59,5 @@ class UserClass {
         "email": email,
         "usertype": usertype,
         "farm": farm.toJson(),
-      };
-}
-
-class Farm {
-  Farm({
-    this.id,
-    this.name,
-    this.logo,
-    this.city,
-    this.dateJoined,
-    this.user,
-  });
-
-  int id;
-  String name;
-  String logo;
-  String city;
-  DateTime dateJoined;
-  int user;
-
-  factory Farm.fromJson(Map<String, dynamic> json) => Farm(
-        id: json["id"],
-        name: json["name"],
-        logo: json["logo"],
-        city: json["city"],
-        dateJoined: DateTime.parse(json["date_joined"]),
-        user: json["User"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "logo": logo,
-        "city": city,
-        "date_joined": dateJoined.toIso8601String(),
-        "User": user,
       };
 }

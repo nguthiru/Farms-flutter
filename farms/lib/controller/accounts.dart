@@ -83,6 +83,7 @@ class AccountController extends GetxController {
       email: email.text,
       password: password1.text,
     );
+    print(response.body);
     status.value = response.statusCode;
     if (validation(response)) {
       Get.to(() => nextPage);

@@ -13,36 +13,27 @@ class BidCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 6.0),
+          padding:
+              EdgeInsets.only(left: 3.0, top: 5.0, bottom: 5.0, right: 6.0),
           width: double.infinity,
-          height: 120,
+          height: 70,
           decoration: BoxDecoration(
-            color: accentOrange.withOpacity(0.4),
+            color: primaryGreen,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage(defaultImage),
+                backgroundImage: NetworkImage(bid.produce.image),
                 radius: 30,
               ),
+              Flexible(
+                child: Text('Bidder: ' + bid.user.username.toUpperCase(),
+                    style: containerCaptions),
+              ),
               _BidDetails(bid: bid),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shadowColor: tertiaryOrange,
-                        onPrimary: tertiaryOrange,
-                        primary: tertiaryOrange,
-                        onSurface: tertiaryOrange,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18))),
-                    onPressed: null,
-                    child: Text(
-                      "ACCEPT",
-                      style: TextStyle(color: Colors.white),
-                    )),
-              )
             ],
           )),
     );
@@ -55,24 +46,19 @@ class _BidDetails extends StatelessWidget {
   const _BidDetails({Key key, this.bid}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text('Bidder: ' + bid.user.username.toUpperCase(),
-              style: containerCaptions),
-          Text(
-            'Kilograms: ' + bid.kilograms.toString(),
-            style: containerCaptions,
-          ),
-          Text(
-            'Price per Kilo: ' + bid.bidPrice.toString(),
-            style: containerCaptions,
-          ),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Text(
+          'Kilograms: ' + bid.kilograms.toString(),
+          style: containerCaptions,
+        ),
+        Text(
+          'Price per Kilo: ' + bid.bidPrice.toString(),
+          style: containerCaptions,
+        ),
+      ],
     );
   }
 }

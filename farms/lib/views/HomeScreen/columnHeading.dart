@@ -1,17 +1,42 @@
+import 'package:farms/colorConstants.dart';
 import 'package:farms/constants.dart';
 import 'package:flutter/material.dart';
 
-class ColumnHeading extends StatelessWidget {
+class Headings extends StatelessWidget {
   final String head;
+  final Function press;
 
-  const ColumnHeading({Key key, @required this.head}) : super(key: key);
+  const Headings({Key key, this.head, this.press}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(head, style: columnHeadingAlt),
-        Text("View all", style: columnSubheading)
+        Text(head,
+            style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: primaryGreen)),
+        GestureDetector(
+          onTap: press,
+          child: Container(
+            width: 60,
+            height: 20,
+            decoration: BoxDecoration(
+              color: primaryGreen,
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: Center(
+              child: Text("View all",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12)),
+            ),
+          ),
+        )
       ],
     );
   }

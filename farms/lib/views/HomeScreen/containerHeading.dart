@@ -17,10 +17,10 @@ class ContainerHeading extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.vertical(top: curve1, bottom: curve2),
-          color: accentOrange.withOpacity(0.2),
+          color: primaryGreen,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
               radius: 20,
@@ -28,19 +28,20 @@ class ContainerHeading extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(produce.product,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 13,
-                      color: Colors.black,
+                      fontSize: 12,
+                      color: Colors.white,
                     )),
                 Text(
                   'Kilograms:' + produce.kilograms.toString(),
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 12,
-                      color: Colors.blueGrey),
+                      fontSize: 10,
+                      color: Colors.white),
                 )
               ],
             ),

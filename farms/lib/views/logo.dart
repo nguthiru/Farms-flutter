@@ -1,3 +1,4 @@
+import 'package:farms/colorConstants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -19,7 +20,10 @@ class Logo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text("Farms",
-            style: TextStyle(fontSize: size, fontWeight: FontWeight.bold)),
+            style: TextStyle(
+                fontSize: size,
+                fontWeight: FontWeight.bold,
+                color: primaryGreen)),
         SvgPicture.asset("Assets/Icons/leaf.svg",
             color: color == null ? Colors.green : color,
             width: width,

@@ -16,7 +16,7 @@ Future<http.Response> farmPatch(
   String token = await fetchToken();
 
   var request = http.MultipartRequest("PATCH", Uri.parse(farmEditUrl));
-  request.fields['farmName'] = farmname;
+  request.fields['name'] = farmname;
   request.fields['city'] = city;
   var pic = await http.MultipartFile.fromPath("logo", image.path);
   request.files.add(pic);

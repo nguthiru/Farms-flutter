@@ -2,6 +2,7 @@ import 'package:farms/colorConstants.dart';
 import 'package:farms/controller/farmController.dart';
 import 'package:farms/network/urls.dart';
 import 'package:farms/views/Registration/button.dart';
+import 'package:farms/views/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +13,12 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+          onPressed: () => Get.to(() => HomeScreen()),
         ),
         backgroundColor: Colors.grey[100],
         elevation: 0,
@@ -56,13 +60,13 @@ class ProfileScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onDoubleTap: controller.chooseImage,
-                      child: Obx(() => CircleAvatar(
+                      child: CircleAvatar(
                           radius: 30,
                           backgroundImage: controller.file == null
-                              ? NetworkImage(controller.user[0] != null
-                                  ? controller.user[0].farm.logo
+                              ? NetworkImage(controller.user != null
+                                  ? controller.user.logo
                                   : defaultImage)
-                              : FileImage(controller.file))),
+                              : FileImage(controller.file)),
                     )),
                 Text("Logo",
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15))
@@ -82,9 +86,11 @@ class ProfileScreen extends StatelessWidget {
           ),
           Center(
             child: CustomButton(
-              hintText: "UPDATE FARM",
-              press: controller.farmUpdate,
-            ),
+                hintText: "UPDATE FARM",
+                press: () {
+                  controller.farmUpdate;
+                  Get.to(() => HomeScreen());
+                }),
           )
         ],
       ),

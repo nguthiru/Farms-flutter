@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 UserFarm userFarmFromJson(String str) => UserFarm.fromJson(json.decode(str));
+Farm farmFromJson(String str, {bool farmOnly = false}) => farmOnly
+    ? Farm.fromJson(json.decode(str)['farm'])
+    : Farm.fromJson(json.decode(str));
 
 String userToJson(UserFarm data) => json.encode(data.toJson());
 

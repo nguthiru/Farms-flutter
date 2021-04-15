@@ -18,4 +18,6 @@ const TextStyle columnSubheading = TextStyle(
     fontSize: 13, fontWeight: FontWeight.w600, color: Colors.blueGrey);
 
 const TextStyle containerCaptions =
-    TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.black87);
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.white);
+
+const String appName = 'FARMS';

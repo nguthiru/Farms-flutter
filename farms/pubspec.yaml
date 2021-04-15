@@ -28,6 +28,8 @@ dependencies:
   shared_preferences: any
   flutter_svg : any
   image_picker: any
+  font_awesome_flutter: any
+  google_fonts: any
   
 
 

@@ -1,4 +1,4 @@
-const String domain = 'http://192.168.88.118:8000';
+const String domain = 'https://farm-app-test.herokuapp.com';
 
 const String registerUrl = domain + 'auth/register/';
 const String loginUrl = domain + '/auth/login/';

@@ -5,6 +5,7 @@ import 'package:farms/views/profile.dart';
 import 'package:farms/views/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: primaryGreen,
+        textTheme: GoogleFonts.varelaRoundTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        scaffoldBackgroundColor: backgroundColor,
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: SignUp(),
     );
   }
 }

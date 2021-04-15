@@ -12,7 +12,7 @@ import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 
 class FarmController extends GetxController {
-  RxList user = List(1).obs;
+  Farm user;
   File file;
   TextEditingController name = TextEditingController();
   TextEditingController city = TextEditingController();
@@ -40,11 +40,11 @@ class FarmController extends GetxController {
     http.Response response = await fetch(userFetchUrl);
     if (validateStatus(response)) {
       //TODO: Implement persistence
-      UserFarm usr = userFarmFromJson(response.body);
+      Farm usr = farmFromJson(response.body, farmOnly: true);
+      name.text = usr.name;
+      city.text = usr.city;
 
-      name.text = usr.farm.name;
-      city.text = usr.farm.city;
-      user.add(usr);
+      user = usr;
     } else {
       errors.value = "Error Getting Details";
     }
@@ -52,10 +52,11 @@ class FarmController extends GetxController {
 
   void validation(http.Response response) {
     if (validateStatus(response)) {
+      print(response.body);
       //TODO:Update User details in database
-      UserFarm usr = userFarmFromJson(response.body);
-      print(usr.farm.name);
-      user.add(usr);
+      Farm usr = farmFromJson(response.body);
+      print(usr.name);
+      user = usr;
     } else {
       errors.value = "An error has occured";
     }
