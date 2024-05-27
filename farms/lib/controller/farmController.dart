@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:farms/models/bidsModel.dart';
 import 'package:farms/models/produce_model.dart';
 import 'package:farms/models/user_intermediate.dart';
-import 'package:farms/models/user_model.dart';
 import 'package:farms/network/urls.dart';
 import 'package:farms/network/farm.dart';
 import 'package:flutter/material.dart';

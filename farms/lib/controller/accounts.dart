@@ -56,6 +56,7 @@ class AccountController extends GetxController {
         errors.value = "User already exists";
         return false;
       }
+      return false;
     }
   }
 

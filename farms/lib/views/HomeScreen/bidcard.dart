@@ -1,7 +1,6 @@
 import 'package:farms/colorConstants.dart';
 import 'package:farms/constants.dart';
 import 'package:farms/models/bidsModel.dart';
-import 'package:farms/network/urls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

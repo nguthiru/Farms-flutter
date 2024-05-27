@@ -1,7 +1,5 @@
-import 'package:farms/colorConstants.dart';
 import 'package:farms/views/Registration/Fields.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomInputFields extends StatelessWidget {
   final String hintText;

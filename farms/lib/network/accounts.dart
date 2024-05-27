@@ -1,10 +1,5 @@
-import 'dart:io';
-
-import 'package:farms/constants.dart';
 import 'package:farms/network/urls.dart';
-import 'package:farms/network/images.dart';
 import 'package:http/http.dart' as http;
-import 'package:farms/models/user_model.dart';
 
 Future<http.Response> registerApi(
     {String username,

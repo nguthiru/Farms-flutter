@@ -88,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
             child: CustomButton(
                 hintText: "UPDATE FARM",
                 press: () {
-                  controller.farmUpdate;
+                  controller.farmUpdate();
                   Get.to(() => HomeScreen());
                 }),
           )

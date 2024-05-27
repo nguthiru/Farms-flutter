@@ -1,7 +1,4 @@
 import 'package:farms/colorConstants.dart';
-import 'package:farms/views/homescreen.dart';
-import 'package:farms/views/login.dart';
-import 'package:farms/views/profile.dart';
 import 'package:farms/views/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

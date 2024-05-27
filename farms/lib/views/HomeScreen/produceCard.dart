@@ -1,6 +1,5 @@
 import 'package:farms/colorConstants.dart';
 import 'package:farms/models/produce_model.dart';
-import 'package:farms/network/urls.dart';
 import 'package:flutter/material.dart';
 
 import 'containerHeading.dart';

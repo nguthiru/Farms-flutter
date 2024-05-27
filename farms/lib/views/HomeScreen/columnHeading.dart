@@ -1,5 +1,4 @@
 import 'package:farms/colorConstants.dart';
-import 'package:farms/constants.dart';
 import 'package:flutter/material.dart';
 
 class Headings extends StatelessWidget {
@@ -9,7 +8,6 @@ class Headings extends StatelessWidget {
   const Headings({Key key, this.head, this.press}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

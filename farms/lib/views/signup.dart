@@ -5,7 +5,6 @@ import 'package:farms/views/login.dart';
 import 'package:farms/views/logo.dart';
 import 'package:farms/views/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import 'Registration/Fields.dart';
